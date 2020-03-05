@@ -15,8 +15,12 @@
       </div>
 
       <!-- Example row of columns -->
+      <!-- <div style="margin-left:10px;">
+        <button class="btn btn-success">Add Project 
+        <span class="glyphicon glyphicon-plus"></span></button>
+      </div> -->
       <div class="row" style="background-color:#fff;margin:10px;">
-
+      <li><a href="/projects/create" class="pull-right btn btn-primary btn-sm">Add Project</a></li>
       @if(count($company->projects) != 0)
         @foreach($company->projects as $project)
             <div class="col-lg-4">
@@ -41,6 +45,10 @@
             <h4>Actions</h4>
             <ol class="list-unstyled">
               <li><a href="/companies/{{ $company->id }}/edit">Edit</a></li>
+              <li><a href="/projects/create">Add Project</a></li>
+              <li><a href="/companies">Companies</a></li>
+              <li><a href="/companies/create">Create new company</a></li>
+              <br>
               <li>
                 <a href="#"
                 onclick="
