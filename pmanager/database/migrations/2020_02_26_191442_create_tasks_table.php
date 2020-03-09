@@ -20,8 +20,8 @@ class CreateTasksTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('days')->unsigned()->nullable();
             $table->integer('hours')->unsigned()->nullable();
-
             $table->integer('company_id')->unsigned()->nullable();
+
             $table->foreign('project_id')->references('id')->on('projects');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('company_id')->references('id')->on('companies');

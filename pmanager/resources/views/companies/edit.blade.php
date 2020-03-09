@@ -3,10 +3,10 @@
 @section('content')
 
 
-    <div class="col-md-9 col-lg-9 col-sm-9 pull-left">
+    <div class="col-md-9 col-lg-9 col-sm-9 pull-left" style="background:white;">
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
-
+    <h1>Edit company</h1>
       <!-- Example row of columns -->
       <div class="row" style="background-color:#fff;margin:10px;">
             <form method="post" action="{{ route('companies.update', [$company->id]) }}">

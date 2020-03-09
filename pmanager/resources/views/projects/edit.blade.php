@@ -6,22 +6,22 @@
     <div class="col-md-9 col-lg-9 col-sm-9 pull-left" style="background:white;">
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
-    <h1>Create new company</h1>
+    <h1>Edit project</h1>
       <!-- Example row of columns -->
       <div class="row" style="background-color:#fff;margin:10px;">
-            <form method="post" action="{{ route('companies.store') }}">
+            <form method="post" action="{{ route('projects.update', [$project->id]) }}">
                 {{ csrf_field() }}
-                <!-- <input type="hidden" name="_method" value="put"> -->
+                <input type="hidden" name="_method" value="put">
                 <div class="form-group">
-                    <label for="company-name">Name<span class="required">*</span></label>
-                    <input type="text" name="name" id="company-name" placeholder="Enter Company Name"
-                    required spellcheck="false" class="form-control">
+                    <label for="project-name">Name<span class="required">*</span></label>
+                    <input type="text" name="name" id="project-name" placeholder="Enter name"
+                    required spellcheck="false" class="form-control" value="{{ $project->name }}">
                 </div>
                 <div class="form-group">
-                    <label for="company-description">Description</label>
-                    <textarea name="description" id="company-description" placeholder="Company description"
+                    <label for="project-description">Description</label>
+                    <textarea name="description" id="project-description" placeholder="project description"
                      cols="30" rows="5" spellcheck="false" class="form-control autosize-target text-left"
-                     style="resize:vertical;"></textarea>
+                     style="resize:vertical;">{{ $project->description }}</textarea>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
@@ -38,8 +38,8 @@
           <div class="sidebar-module">
             <h4>Actions</h4>
             <ol class="list-unstyled">
-              <li><a href="/companies">My companies</a></li>
-              <li><a href="/companies">All companies</a></li>
+              <li><a href="/projects/{{ $project->id }}">View project</a></li>
+              <li><a href="/projects">All projects</a></li>
             </ol>
           </div>
           

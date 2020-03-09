@@ -20,13 +20,13 @@
         <span class="glyphicon glyphicon-plus"></span></button>
       </div> -->
       <div class="row" style="background-color:#fff;margin:10px;">
-      <li><a href="/projects/create" class="pull-right btn btn-primary btn-sm">Add Project</a></li>
+      <li><a href="/projects/create/{{ $company->id }}" class="pull-right btn btn-primary btn-sm">Add Project</a></li>
       @if(count($company->projects) != 0)
         @foreach($company->projects as $project)
             <div class="col-lg-4">
             <h2>{{ $project->name }}</h2>
             <!-- <p class="text-danger">As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p> -->
-            <p>{{$company->description}}</p>
+            <p>{{$project->description}}</p>
             <p><a class="btn btn-primary" href="/projects/{{$project->id}}" role="button">View Project »</a></p>
             </div>
         @endforeach
@@ -45,9 +45,8 @@
             <h4>Actions</h4>
             <ol class="list-unstyled">
               <li><a href="/companies/{{ $company->id }}/edit">Edit</a></li>
-              <li><a href="/projects/create">Add Project</a></li>
+              <li><a href="/projects/create/{{ $company->id }}">Add Project</a></li>
               <li><a href="/companies">Companies</a></li>
-              <li><a href="/companies/create">Create new company</a></li>
               <br>
               <li>
                 <a href="#"
